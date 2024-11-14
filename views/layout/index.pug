@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/css/app.css")
+        title iTask | #{page}
+    body 
+        header(class="flex items-center justify-between px-14 h-[12vh] bg-slate-500")
+            h1(class="text-3xl font-extrabold text-white")
+                a(href="/") iTask  
+        
+            nav
+                ul.flex.gap-5
+                    li
+                        a(href="/" class="text-white" )  Home
+                    li
+                        a(href="/todos" class="text-white" )  Todos
+                    li
+                        a(href="/about" class="text-white" )  About
+        
+        main(class="h-[88vh] border-2 border-green-800")                
+            block content
