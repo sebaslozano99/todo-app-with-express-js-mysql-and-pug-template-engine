@@ -3,11 +3,16 @@ block content
     div(class="p-6 space-y-4 h-full border-2 border-dashed border-purple-700") 
         form(action="/todos" method="POST"  class="max-w-md mx-auto" ) 
             label(for="new-task") 
-            input(type="text" id="new-task" placeholder="Do the laundry..." class="border border-black/30 w-full px-2 py-1 rounded outline-none")
+            input(type="text" id="new-task" name="task" placeholder="Do the laundry..." class="border border-black/30 w-full px-2 py-1 rounded outline-none")
+        if error
+            p(class="bg-red-500 text-white max-w-sm py-2 px-3")
 
-
-        ul(class="grid grid-cols-3 gap-3 p-2 h-[85%] border-2 ")
-            each todo in todos
-                li(class="border border-black/50") #{todo.task}
+        ul(class="grid grid-cols-2 auto-rows-[3.5em] gap-4 p-6 h-[85%] w-full")
+            if todos
+                each todo in todos
+                    li(class="flex items-center justify-between p-2 border border-black/50 rounded-lg") #{todo.task}
+                        button(class=" text-xs bg-black/50 hover:bg-black/80 text-white w-6 h-6 rounded-full transition-all duration-500 ease-in-out") X
+            else 
+                p Start adding tasks to your list
 
 

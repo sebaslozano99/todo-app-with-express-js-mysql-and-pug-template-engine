@@ -14,8 +14,8 @@ app.set("views", path.join(__dirname, "views")); // then we set the path in whic
 
 
 // MIDDLEWARE 
-app.use( express.static("public") ); // let express knnow where to find static files (such as our css files) 
-
+app.use(express.static("public")); // let express knnow where to find static files (such as our css files) 
+app.use(express.urlencoded({ extended: true }));
 
 
 // ROUTES 
